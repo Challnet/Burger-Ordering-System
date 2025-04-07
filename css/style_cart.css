@@ -1,0 +1,315 @@
+/* General styling */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --clr-primary: #fe5722;
+    --clr-secondary: #272d36;
+    --clr-table-header: #f9f9f9;
+    --clr-table-row-hover: #f1f1f1;
+    --clr-button-hover: #e94c2d;
+    --clr-button-active: #d64c22;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+    background: #fff;
+    color: var(--clr-secondary);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #fff5f2;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    color: #272d36;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Back to Stalls Button */
+.back-to-stalls {
+    margin: 20px auto;
+    padding: 14px 20px;
+    background: var(--clr-primary);
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.back-to-stalls:hover {
+    background: var(--clr-button-hover);
+}
+
+/* Cart Section */
+#cart-items {
+    padding: 40px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+#cart-items table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#cart-items th,
+#cart-items td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart-items th {
+    background-color: var(--clr-table-header);
+    color: #272d36;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#cart-items td {
+    font-size: 16px;
+}
+
+#cart-items tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+#cart-items tr:hover {
+    background-color: var(--clr-table-row-hover);
+}
+
+#cart-items input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.quantity-buttons {
+    display: inline-flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    background-color: var(--clr-primary);
+    color: white;
+    font-size: 20px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
+}
+
+.quantity-btn:hover {
+    background-color: var(--clr-button-hover);
+}
+
+.quantity-btn:active {
+    background-color: var(--clr-button-active);
+}
+
+/* Cart Total */
+.cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--clr-primary);
+    margin-top: 20px;
+}
+
+/* Cart Actions */
+.cart-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: row;
+}
+
+.cart-actions .btn {
+    padding: 12px 30px;
+    background: var(--clr-primary);
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.cart-actions .btn:hover {
+    background: var(--clr-button-hover);
+}
+
+.cart-actions .btn:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+/* Footer */
+footer {
+    background: var(--clr-secondary);
+    color: #b2b2b2;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    #cart-items table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #cart-items th,
+    #cart-items td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #cart-items input[type="number"] {
+        width: 50px;
+        padding: 6px;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-actions .btn {
+        margin: 5px 0;
+        padding: 14px 30px;
+    }
+}
+
+.update-btn,
+.remove-btn {
+    padding: 10px 20px;
+    background-color: var(--clr-primary);
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.update-btn:hover,
+.remove-btn:hover {
+    background-color: var(--clr-button-hover);
+    transform: translateY(-2px);
+}
+
+.update-btn:active,
+.remove-btn:active {
+    background-color: var(--clr-button-active);
+    transform: translateY(1px);
+}
+
+.remove-btn {
+    background-color: #f44336;
+}
+
+.remove-btn:hover {
+    background-color: #d32f2f;
+}
+
+.remove-btn:active {
+    background-color: #b71c1c;
+}
+
+/* Order Type Form */
+.order-type-form {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-type-form .order-type-display {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.order-type-form label {
+    margin-right: 30px;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.order-type-form label:hover {
+    background-color: var(--clr-primary-light);
+    color: var(--clr-primary);
+}
+
+.order-type-form input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.order-type-btn {
+    padding: 12px 25px;
+    background-color: var(--clr-primary);
+    color: #fff;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.order-type-btn:hover {
+    background-color: var(--clr-button-hover);
+    transform: translateY(-2px);
+}
+
+.order-type-form input[type="radio"]:checked+label {
+    background-color: var(--clr-primary-light);
+    color: var(--clr-primary);
+    font-weight: 700;
+}

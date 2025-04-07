@@ -1,0 +1,206 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+}
+
+.sidebar-header .icon {
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.sidebar-header .dropdown-icon {
+  margin-left: auto;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 10px 0;
+  z-index: 1;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f7f7f7;
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.sidebar-menu li:hover {
+  background-color: #f7f7f7;
+}
+
+.sidebar-menu ion-icon {
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.sidebar-footer .user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-footer ion-icon {
+  font-size: 20px;
+  color: #666;
+}
+
+.sidebar-header:hover .dropdown-menu {
+  display: block;
+}
+
+/* Orders menu item styling */
+.sidebar-menu li.orders {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.sidebar-menu li.orders:hover {
+  background-color: #f7f7f7;
+}
+
+/* Orders icon styling */
+.sidebar-menu li.orders ion-icon {
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+/* Active state for orders */
+.sidebar-menu li.orders.active {
+  background-color: #e0f7fa;
+  color: #00796b;
+}
+
+/* Dropdown menu styles */
+.sidebar-header .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 10px 0;
+  z-index: 1;
+}
+
+.sidebar-header .dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.sidebar-header .dropdown-menu a:hover {
+  background-color: #f7f7f7;
+}
+
+.sidebar-header:hover .dropdown-menu {
+  display: block;
+}
+
+#orders {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 20px auto;
+  display: none;
+}
+
+#orders.show {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#orders h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#profile {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

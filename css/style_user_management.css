@@ -1,0 +1,345 @@
+/* General styling */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --clr-primary: #fe5722;
+    --clr-secondary: #272d36;
+    --clr-table-header: #f9f9f9;
+    --clr-table-row-hover: #f1f1f1;
+    --clr-button-hover: #e94c2d;
+    --clr-button-active: #d64c22;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+    background: #fff;
+    color: var(--clr-secondary);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #fff5f2;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    color: #272d36;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Back to Dashboard Button */
+.back-to-dashboard {
+    margin: 20px auto;
+    padding: 14px 20px;
+    background: var(--clr-primary);
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.back-to-dashboard:hover {
+    background: var(--clr-button-hover);
+}
+
+/* User Management Section */
+#user-management {
+    padding: 40px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+#user-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#user-management th,
+#user-management td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#user-management th {
+    background-color: var(--clr-table-header);
+    color: #272d36;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#user-management td {
+    font-size: 16px;
+}
+
+#user-management tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+#user-management tr:hover {
+    background-color: var(--clr-table-row-hover);
+}
+
+/* Buttons */
+.edit-btn,
+.delete-btn {
+    padding: 10px 20px;
+    background-color: var(--clr-primary);
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    background-color: var(--clr-button-hover);
+    transform: translateY(-2px);
+}
+
+.edit-btn:active,
+.delete-btn:active {
+    background-color: var(--clr-button-active);
+    transform: translateY(1px);
+}
+
+.delete-btn {
+    background-color: #f44336;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+.delete-btn:active {
+    background-color: #b71c1c;
+}
+
+/* Modal Styling for Editing User */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal h2 {
+    color: #272d36;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal form label {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 16px;
+}
+
+.modal form input,
+.modal form select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.modal form button {
+    padding: 12px;
+    background-color: var(--clr-primary);
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal form button:hover {
+    background-color: var(--clr-button-hover);
+}
+
+.modal form button:active {
+    background-color: var(--clr-button-active);
+}
+
+.modal .cancel-btn {
+    background-color: #ccc;
+    margin-top: 10px;
+}
+
+.modal .cancel-btn:hover {
+    background-color: #bbb;
+}
+
+/* Footer */
+footer {
+    background: var(--clr-secondary);
+    color: #b2b2b2;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    #user-management table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #user-management th,
+    #user-management td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #user-management input[type="text"],
+    #user-management input[type="email"],
+    #user-management input[type="number"],
+    #user-management select {
+        font-size: 14px;
+    }
+}
+
+/* Add User Section */
+#add-user {
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--clr-table-header);
+    /* Светлый фон из переменных */
+    border: 1px solid var(--clr-secondary);
+    /* Тонкая темная граница */
+    border-radius: 10px;
+    /* Увеличенные углы */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    /* Единая тень */
+    max-width: 600px;
+    width: 90%;
+    /* Адаптация для маленьких экранов */
+}
+
+/* General Form Styling */
+#add-user {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--clr-table-header);
+    border: 1px solid var(--clr-secondary);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+}
+
+#add-user h2 {
+    font-size: 1.5rem;
+    color: var(--clr-secondary);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.add-user-form .form-group {
+    margin-bottom: 15px;
+}
+
+.add-user-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--clr-secondary);
+    margin-bottom: 6px;
+}
+
+.add-user-form input,
+.add-user-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--clr-secondary);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--clr-secondary);
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.add-user-form input:focus,
+.add-user-form select:focus {
+    border-color: var(--clr-primary);
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(254, 87, 34, 0.4);
+    outline: none;
+}
+
+.add-user-form .btn.add-btn {
+    padding: 10px 15px;
+    background-color: var(--clr-primary);
+    color: #fff;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-user-form .btn.add-btn:hover {
+    background-color: var(--clr-button-hover);
+    transform: translateY(-2px);
+}
+
+.add-user-form .btn.add-btn:active {
+    background-color: var(--clr-button-active);
+    transform: translateY(1px);
+}

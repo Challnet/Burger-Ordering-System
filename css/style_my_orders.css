@@ -1,0 +1,148 @@
+/* General styling */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --clr-primary: #fe5722;
+    --clr-secondary: #000;
+    --clr-table-header: #f9f9f9;
+    --clr-table-row-hover: #f1f1f1;
+    --clr-button-hover: #e94c2d;
+    --clr-button-active: #d64c22;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+    background: #fff;
+    color: var(--clr-secondary);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #fff5f2;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    color: var(--clr-secondary);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Go to Stalls Button */
+.go-to-stalls {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.go-to-stalls a {
+    text-decoration: none;
+}
+
+.btn-go-to-stalls {
+    padding: 14px 20px;
+    background: var(--clr-primary);
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.btn-go-to-stalls:hover {
+    background: var(--clr-button-hover);
+}
+
+.btn-go-to-stalls:active {
+    background: var(--clr-button-active);
+}
+
+/* Orders Section */
+.orders-container {
+    padding: 40px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.orders-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.orders-container th,
+.orders-container td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: var(--clr-secondary);
+}
+
+.orders-container th {
+    background-color: var(--clr-table-header);
+    color: #272d36;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Stall Name and Order Status */
+.orders-container td.stall-name {
+    font-weight: bold;
+}
+
+/* Status colors */
+.status-processing {
+    background-color: rgba(173, 216, 230, 0.2);
+}
+
+.status-completed {
+    background-color: rgba(144, 238, 144, 0.2);
+}
+
+.status-cancelled {
+    background-color: rgba(255, 99, 71, 0.2);
+}
+
+.status-pending {
+    background-color: rgba(255, 235, 59, 0.2);
+}
+
+@media (max-width: 768px) {
+    .orders-container table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .orders-container th,
+    .orders-container td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .orders-container td.stall-name {
+        font-size: 16px;
+    }
+
+    .btn-go-to-stalls {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+}

@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+
+/* Base */
+:root {
+    --whiteColor: #ffffff;
+    --clr-primary: #fe5722;
+    --clr-secondary: #272d36;
+    --clr-background: #f9f9f9;
+    --clr-button-hover: #e94c2d;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--clr-background);
+    color: var(--clr-secondary);
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    background-color: #fff5f2;
+    color: #272d36;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.back-button-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.back-button {
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    background-color: var(--clr-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: var(--clr-button-hover);
+}
+
+/* Fixed position buttons for Go to Cart and Back to Stall */
+.top-buttons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 14px 20px;
+    background: var(--clr-primary);
+    border-radius: 4px;
+    color: var(--whiteColor);
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    margin: 10px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--clr-button-hover);
+}
+
+/* Menu items container */
+#menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual menu item */
+.menu-item {
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: var(--whiteColor);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+}
+
+.menu-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.menu-item-name {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: var(--clr-secondary);
+}
+
+.menu-item-description {
+    font-size: 1em;
+    margin-top: 5px;
+    color: #555;
+}
+
+.menu-item-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--clr-primary);
+}
+
+/* Quantity buttons styling */
+.quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    background-color: var(--clr-primary);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity-btn:hover {
+    background-color: var(--clr-button-hover);
+}
+
+.quantity-container input {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid var(--clr-primary);
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--clr-secondary);
+    color: var(--whiteColor);
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .menu-item {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .top-buttons {
+        top: 10px;
+        right: 10px;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .go-to-cart-btn,
+    .back-to-stall-btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .go-to-cart-btn,
+    .back-to-stall-btn {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+}

@@ -1,0 +1,171 @@
+/* General Styling */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --clr-primary: #fe5722;
+    --clr-secondary: #272d36;
+    --clr-button-hover: #e94c2d;
+    --clr-button-active: #d64c22;
+    --clr-table-header: #f9f9f9;
+    --clr-table-row-hover: #f1f1f1;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+    background: #fff;
+    color: var(--clr-secondary);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #fff5f2;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    color: #272d36;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Checkout Section */
+#checkout {
+    padding: 40px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+#checkout h3 {
+    font-size: 2rem;
+    color: var(--clr-secondary);
+    margin-bottom: 20px;
+}
+
+#checkout table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#checkout th,
+#checkout td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#checkout th {
+    background-color: var(--clr-table-header);
+    color: #272d36;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#checkout td {
+    font-size: 16px;
+}
+
+#checkout tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+#checkout tr:hover {
+    background-color: var(--clr-table-row-hover);
+}
+
+/* Cart Total */
+.cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--clr-primary);
+    margin-top: 20px;
+}
+
+/* Payment Method Form */
+#checkout form {
+    margin-top: 30px;
+}
+
+#checkout select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+#checkout button {
+    padding: 12px 30px;
+    background: var(--clr-primary);
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#checkout button:hover {
+    background: var(--clr-button-hover);
+}
+
+#checkout button:active {
+    background: var(--clr-button-active);
+}
+
+/* Footer Styling */
+footer {
+    background: var(--clr-secondary);
+    color: #b2b2b2;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    #checkout h3 {
+        font-size: 1.8rem;
+    }
+
+    #checkout table {
+        font-size: 14px;
+    }
+
+    #checkout th,
+    #checkout td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #checkout select {
+        width: 100%;
+    }
+
+    #checkout button {
+        width: 100%;
+    }
+}

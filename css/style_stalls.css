@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+
+/* Base */
+:root {
+  --whiteColor: #ffffff;
+  --clr-primary: #fe5722;
+  --clr-secondary: #272d36;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  color: var(--clr-secondary);
+  overflow-x: hidden;
+}
+
+.section {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 0 30px;
+}
+
+/* Headings */
+.primary {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.secondary {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.tertiary {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 14px 20px;
+  background: var(--clr-primary);
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: inline-block;
+  margin: 20px 0;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: #e94c2d;
+}
+
+/* Menu */
+nav {
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: #fff5f2;
+  box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.22);
+  z-index: 22;
+}
+
+label.logo {
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 30px;
+  font-weight: 700;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  font-size: 18px;
+  padding: 7px 13px;
+  text-decoration: none;
+  color: var(--clr-secondary);
+}
+
+/* Active and hover states */
+.menu a.active,
+.menu a:hover {
+  border-bottom: 2px solid var(--clr-primary);
+  transition: 0.3s;
+}
+
+/* Hamburger menu button */
+.checkbtn {
+  font-size: 30px;
+  color: #fff;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* Dropdown styling */
+.menu ul li.dropdown {
+  position: relative;
+}
+
+.menu ul li a.dropdown-toggle {
+  cursor: pointer;
+}
+
+.menu .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 80px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 160px;
+  padding: 1px 0;
+}
+
+/* Show dropdown menu when hovering over the dropdown */
+.menu ul li.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.menu ul li a.dropdown-toggle {
+  cursor: pointer;
+}
+
+.menu .dropdown-menu li {
+  display: block;
+  padding: 1px 0;
+}
+
+.menu .dropdown-menu li a {
+  font-size: 14px;
+  padding: 2px 12px;
+  text-decoration: none;
+  color: var(--clr-secondary);
+  white-space: nowrap;
+  display: block;
+}
+
+.menu .dropdown-menu li a:hover {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+.menu .dropdown-toggle::after {
+  content: ' ▼';
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* Form styling */
+.address-form {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.address-form label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.address-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.address-form button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.address-form button:hover {
+  background-color: #218838;
+}
+
+/* Suggested address display */
+#suggested-address {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Nearby stalls section */
+.stalls-container {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--clr-secondary);
+}
+
+.stalls-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stall-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stall-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.stall-image-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.stall-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.stall-card:hover .stall-image {
+  transform: scale(1.05);
+}
+
+.stall-info {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+.stall-info .price-range,
+.stall-info .address,
+.stall-info .operating-hours {
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+.stall-info .price-range::before {
+  content: "💵 ";
+}
+
+.stall-info .address::before {
+  content: "📍 ";
+}
+
+.stall-info .operating-hours::before {
+  content: "🕒 ";
+}
+
+.stall-info h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--clr-secondary);
+}
+
+.stall-info .description {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.stall-info .owner {
+  margin: 20px 0;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: var(--clr-secondary);
+}
+
+.view-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: var(--clr-primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.view-btn:hover {
+  background: #e94c2d;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .stalls-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stalls-grid {
+    grid-template-columns: 1fr;
+  }
+}
